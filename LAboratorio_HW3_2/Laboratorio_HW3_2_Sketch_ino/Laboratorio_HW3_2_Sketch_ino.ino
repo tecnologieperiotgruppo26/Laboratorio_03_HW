@@ -40,11 +40,9 @@ void setup() {
   digitalWrite(13, LOW);
   Bridge.begin();
   digitalWrite(13, HIGH);
-  server.listenOnLocalhost();
   server.begin();
   Serial.begin(9600);
-  Serial.print("Lab 2 Starting");
-  Serial.setTimeout(timeout); /* Timeout riferito alla lettura dell'input settato a 1 minuto per permettere all'utente di scrivere */
+  Serial.print("Lab 3.2 Starting:");
 }
 
 void loop() {
@@ -57,7 +55,15 @@ void loop() {
    * col metodo curl della shell
    */
   jsonTemp = senMlEncode("tmp", temp, "C");
-     
+  int postCallback = postRequest(jsonTemp);
+  if (postCallback == 0){
+    Serial.print("La POST Request è andata a buon fine con valore: ");
+    Serial.println(postCallback);
+  }
+  else {
+    Serial.print("POST Request ERROR VALUE: ");
+    Serial.println(postCallback);
+  }
 }
 
 /**
