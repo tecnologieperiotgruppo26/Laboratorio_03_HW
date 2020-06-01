@@ -1,3 +1,13 @@
+/**
+ *    IOT laboratorio HW-3
+ *    esercizio 1
+ *    todo: realizzare sketch in grado di rispondere
+ *          richieste http get ad un server gestendo 
+ *          il led e riportando i dati rilevati dal
+ *          sensore di temperatura
+ */
+
+
 #include <Bridge.h>
 #include <BridgeServer.h>
 #include <BridgeClient.h>
