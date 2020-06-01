@@ -34,6 +34,12 @@ void setup() {
   digitalWrite(13, HIGH);
   mqtt.begin("test.mosquitto.org", 1883);
   mqtt.subscribe(myBaseTopic + String("/led"), setLedValue);
+  /**
+   * setLedValue, ovvero il secondo argomento della funzione
+   * subscribe serve ad associare una funzione al segnale di 
+   * callback data dala notify di mqtt quando i dati sono
+   * disponibili
+   */
   Serial.begin(9600);
   Serial.print("Lab 3.3 Starting:");
 }
@@ -42,5 +48,17 @@ void loop() {
   // put your main code here, to run repeatedly:
 
 }
-
-void setLedValue(const String&
+/**
+ * penso sia difficile da interpretare per via della funzione di callback
+ * non so come è inizializzata e creata 
+ */
+void setLedValue(const String& topic, const String& subtopic, const String& message){
+  DeserializationError err = deserializeJson(doc_rec, message);
+  if (err){
+    Serial.print(F("DeserializeJson() failed with code "));
+    Serial.println(err.c_str());
+  }
+  if (doc_rec["e"][0]["n"] == "led"){
+    digitalWrite(pinLed, (int)doc_rec["e"][0]["v"]);
+  }
+}
