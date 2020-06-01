@@ -9,7 +9,7 @@ class Log(object):
     def GET(self, *uri, **params):
         return json.loads(self.requests)
     
-    def POST(self, *uri, **params) 
+    def POST(self, *uri, **params): 
         request_body = cherrypy.request.body.read()
         request = json.loads(request_body)
         self.requests.append(request)
