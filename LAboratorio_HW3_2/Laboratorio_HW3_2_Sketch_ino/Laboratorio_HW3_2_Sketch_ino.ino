@@ -64,7 +64,7 @@ void loop() {
     Serial.print("POST Request ERROR VALUE: ");
     Serial.println(postCallback);
   }
-  delay(10000);
+  delay(5000);
 }
 
 /**

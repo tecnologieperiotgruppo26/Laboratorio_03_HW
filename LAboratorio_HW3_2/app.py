@@ -9,7 +9,7 @@ class Log(object):
     def GET(self, *uri, **params):
         return json.dumps(self.requests)
     
-    def POST(self, *uri, **params): 
+    def POST(self, *uri, **params):
         request_body = cherrypy.request.body.read()
         request = json.loads(request_body)
         self.requests.append(request)
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     cherrypy.config.update({'server.socket_host': '127.0.0.1'})
     cherrypy.config.update({'server.socket_port': 8080})
     cherrypy.engine.start()
-    cherrypy.engine.stop()
+    cherrypy.engine.block()
 
 
 
