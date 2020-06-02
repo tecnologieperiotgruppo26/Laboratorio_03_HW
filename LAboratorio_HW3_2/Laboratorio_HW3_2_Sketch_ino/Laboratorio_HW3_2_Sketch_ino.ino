@@ -27,7 +27,7 @@ const long int R0 = 100000;
 const int beta = 4275;
 
 String jsonTemp = "";
-String url = "http://192.168.1.69:8080/log";
+String url = "http://192.168.1.69:8080/";
 /**
  * il mio indirizzo ip locale
  * 192.168.1.69
