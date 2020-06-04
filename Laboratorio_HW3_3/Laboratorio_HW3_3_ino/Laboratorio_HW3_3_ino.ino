@@ -24,7 +24,8 @@ float temp = 0.0;
 const long int R0 = 100000;
 const int beta = 4275;
 
-String myBaseTopic = "/tiot/26";
+String myBaseTopicLed = "/tiot/26/led";
+String myBaseTopicTmp = "/tiot/26/tmp";
 
 String jsonTemp = "";
 
@@ -36,8 +37,8 @@ void setup() {
   digitalWrite(13, LOW);
   Bridge.begin();
   digitalWrite(13, HIGH);
-  mqtt.begin("test.mosquitto.org", 1883);
-  mqtt.subscribe(myBaseTopic + String("/led"), setLedValue);
+  mqtt.begin("85.119.83.194", 1883);
+  mqtt.subscribe(myBaseTopicLed, setLedValue);
   /**
    * setLedValue, ovvero il secondo argomento della funzione
    * subscribe serve ad associare una funzione al segnale di 
@@ -57,7 +58,7 @@ void loop() {
    */
    temp = checkTemp();
    jsonTemp = senMlEncode("tmp", temp, "C");
-   mqtt.publish(myBaseTopic + String("/tmp"), jsonTemp);
+   mqtt.publish(myBaseTopicTmp, jsonTemp);
    Serial.println("published tmp on topic");
    delay(5000);
 }
@@ -71,7 +72,8 @@ void setLedValue(const String& topic, const String& subtopic, const String& mess
     Serial.print(F("DeserializeJson() failed with code "));
     Serial.println(err.c_str());
   }
-  if (topic == myBaseTopic && subtopic == "/led"){
+  String topicCompleto = String(topic)+String(subtopic);
+  if (topicCompleto == myBaseTopicLed){
     if (doc_rec["e"][0]["n"] == "led"){
       if(doc_rec["e"][0]["v"]==0 || doc_rec["e"][0]["v"]==1){
         digitalWrite(ledPin, (int)doc_rec["e"][0]["v"]);  

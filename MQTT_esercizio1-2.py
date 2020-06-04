@@ -119,7 +119,7 @@ class DoSomething():
     def __init__(self, clientID):
         # create an instance of MyMQTT class
         self.clientID = clientID
-        self.myMqttClient = MyMQTT(self.clientID, "test.mosquitto.org", 1883, self)
+        self.myMqttClient = MyMQTT(self.clientID, "85.119.83.194", 1883, self)
 
     def run(self):
 
