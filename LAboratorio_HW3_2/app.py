@@ -28,8 +28,8 @@ if __name__ == "__main__":
     }
 
     cherrypy.tree.mount(Log(), '/', conf)
-    cherrypy.config.update({'server.socket_host': '0.0.0.0'})
-    cherrypy.config.update({'server.socket_port': 8080})
+    cherrypy.config.update({'server.socket_host': '192.168.1.69'})
+    cherrypy.config.update({'server.socket_port': 9090})
     cherrypy.engine.start()
     cherrypy.engine.block()
 

@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Laboratorio_HW3_2_Sketch_ino/Laboratorio_HW3_2_Sketch_ino.ino" beforeDir="false" afterPath="$PROJECT_DIR$/Laboratorio_HW3_2_Sketch_ino/Laboratorio_HW3_2_Sketch_ino.ino" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Laboratorio_HW3_3/Laboratorio_HW3_3_ino/Laboratorio_HW3_3_ino.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../Laboratorio_HW3_3/Laboratorio_HW3_3_ino/Laboratorio_HW3_3_ino.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MQTT_esercizio1-2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MQTT_esercizio1-2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +26,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -73,7 +75,8 @@
       <updated>1591110625448</updated>
       <workItem from="1591110627212" duration="613000" />
       <workItem from="1591121342147" duration="2063000" />
-      <workItem from="1591132915876" duration="666000" />
+      <workItem from="1591132915876" duration="1328000" />
+      <workItem from="1591196814822" duration="36000" />
     </task>
     <servers />
   </component>
@@ -85,22 +88,26 @@
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="137" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.736@0.0.1366.736" timestamp="1591110729175" />
-    <state width="1323" height="181" key="GridCell.Tab.0.bottom" timestamp="1591133373131">
+    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1591196865872">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state width="1323" height="181" key="GridCell.Tab.0.bottom/0.0.1366.736@0.0.1366.736" timestamp="1591133373131" />
-    <state width="1323" height="181" key="GridCell.Tab.0.center" timestamp="1591133373131">
+    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.736@0.0.1366.736" timestamp="1591196865872" />
+    <state width="1323" height="181" key="GridCell.Tab.0.bottom" timestamp="1591134514349">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state width="1323" height="181" key="GridCell.Tab.0.center/0.0.1366.736@0.0.1366.736" timestamp="1591133373131" />
-    <state width="1323" height="181" key="GridCell.Tab.0.left" timestamp="1591133373131">
+    <state width="1323" height="181" key="GridCell.Tab.0.bottom/0.0.1366.736@0.0.1366.736" timestamp="1591134514349" />
+    <state width="1323" height="181" key="GridCell.Tab.0.center" timestamp="1591134514349">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state width="1323" height="181" key="GridCell.Tab.0.left/0.0.1366.736@0.0.1366.736" timestamp="1591133373131" />
-    <state width="1323" height="181" key="GridCell.Tab.0.right" timestamp="1591133373131">
+    <state width="1323" height="181" key="GridCell.Tab.0.center/0.0.1366.736@0.0.1366.736" timestamp="1591134514349" />
+    <state width="1323" height="181" key="GridCell.Tab.0.left" timestamp="1591134514349">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state width="1323" height="181" key="GridCell.Tab.0.right/0.0.1366.736@0.0.1366.736" timestamp="1591133373131" />
+    <state width="1323" height="181" key="GridCell.Tab.0.left/0.0.1366.736@0.0.1366.736" timestamp="1591134514349" />
+    <state width="1323" height="181" key="GridCell.Tab.0.right" timestamp="1591134514349">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state width="1323" height="181" key="GridCell.Tab.0.right/0.0.1366.736@0.0.1366.736" timestamp="1591134514349" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LAboratorio_HW3_2$app.coverage" NAME="app Coverage Results" MODIFIED="1591133618613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

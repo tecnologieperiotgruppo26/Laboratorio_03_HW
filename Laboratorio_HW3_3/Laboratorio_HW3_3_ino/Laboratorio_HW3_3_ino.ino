@@ -58,7 +58,8 @@ void loop() {
    temp = checkTemp();
    jsonTemp = senMlEncode("tmp", temp, "C");
    mqtt.publish(myBaseTopic + String("/tmp"), jsonTemp);
-   delay(10000);
+   Serial.println("published tmp on topic");
+   delay(5000);
 }
 /**
  * penso sia difficile da interpretare per via della funzione di callback

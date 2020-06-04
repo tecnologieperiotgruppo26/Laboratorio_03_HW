@@ -27,7 +27,7 @@ const long int R0 = 100000;
 const int beta = 4275;
 
 String jsonTemp = "";
-String url = "http://192.168.1.69:8080/";
+String url = "192.168.1.69:9090";
 /**
  * il mio indirizzo ip locale
  * 192.168.1.69
@@ -40,9 +40,8 @@ void setup() {
   digitalWrite(13, LOW);
   Bridge.begin();
   digitalWrite(13, HIGH);
-  server.begin();
   Serial.begin(9600);
-  Serial.print("Lab 3.2 Starting:");
+  Serial.println("Lab 3.2 Starting:");
 }
 
 void loop() {
@@ -107,10 +106,11 @@ String senMlEncode(String res, float v, String unit){
     doc_snd["e"][0]["u"] = (char*)NULL;
   }
   doc_snd["e"][0]["t"] = millis()/1000;
-  doc_snd["e"][0]["v"] = v;
+  doc_snd["e"][0]["v"] = int(v);
   
   String output;
   serializeJson(doc_snd, output);
+  Serial.println(output);
   return output;
 }
 

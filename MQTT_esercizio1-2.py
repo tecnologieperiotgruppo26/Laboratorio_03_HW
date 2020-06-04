@@ -119,7 +119,7 @@ class DoSomething():
     def __init__(self, clientID):
         # create an instance of MyMQTT class
         self.clientID = clientID
-        self.myMqttClient = MyMQTT(self.clientID, "mqtt.eclipse.org", 1883, self)
+        self.myMqttClient = MyMQTT(self.clientID, "test.mosquitto.org", 1883, self)
 
     def run(self):
 
@@ -148,13 +148,14 @@ class DoSomething():
 if __name__ == '__main__':
     client = DoSomething("C1")
     client.run()
-    topic = "led"#input("Inserire un topic a cui sottoscriversi per poi mandare i messaggi")
+    topic = "/tiot/26/tmp"
+    #input("Inserire un topic a cui sottoscriversi per poi mandare i messaggi")
     client.mySubscribe(topic)
     while(True):
         command = input("Digita q per uscire, se vuoi")
         if command != 'q':
             statusLed = input("Inseire lo stato della lampadina e vedi se te lo fa leggere come subscriber")
-            client.mySecondPublish(topic, statusLed)
+            client.mySecondPublish("/tiot/26/led", statusLed)
         else:
             break
 
