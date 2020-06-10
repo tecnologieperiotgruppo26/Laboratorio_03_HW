@@ -68,14 +68,13 @@ class MySubscriber:
 class MyMQTT:
     #praicamente da quel che ho capito sta classe è un qualcosa di più specifico rispetto ad un publisher
     #creato un po meglio
-    def __init__(self, clientID, broker, port, notifier):
+    def __init__(self, clientID, broker, port, notifier, clean_session=False):
         self.broker = broker
         self.port = port
         self.notifier = notifier
         self.clientID = clientID
         self._topic = ""
         self._isSubscriber = False
-
         # create an instance of paho.mqtt.client
         self._paho_mqtt = PahoMQTT.Client(clientID, False)
         # register the callback
@@ -119,7 +118,7 @@ class DoSomething():
     def __init__(self, clientID):
         # create an instance of MyMQTT class
         self.clientID = clientID
-        self.myMqttClient = MyMQTT(self.clientID, "85.119.83.194", 1883, self)
+        self.myMqttClient = MyMQTT(self.clientID, "mqtt.eclipse.org", 1883, self)
 
     def run(self):
 
@@ -155,7 +154,7 @@ if __name__ == '__main__':
         command = input("Digita q per uscire, se vuoi")
         if command != 'q':
             statusLed = input("Inseire lo stato della lampadina e vedi se te lo fa leggere come subscriber")
-            client.mySecondPublish("/tiot/26/led", statusLed)
+            client.mySecondPublish(topic, statusLed)
         else:
             break
 

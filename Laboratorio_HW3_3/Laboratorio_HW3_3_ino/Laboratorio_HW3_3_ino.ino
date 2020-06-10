@@ -37,7 +37,7 @@ void setup() {
   digitalWrite(13, LOW);
   Bridge.begin();
   digitalWrite(13, HIGH);
-  mqtt.begin("85.119.83.194", 1883);
+  mqtt.begin("mqtt.eclipse.org", 1883);
   mqtt.subscribe(myBaseTopicLed, setLedValue);
   /**
    * setLedValue, ovvero il secondo argomento della funzione
@@ -59,7 +59,9 @@ void loop() {
    temp = checkTemp();
    jsonTemp = senMlEncode("tmp", temp, "C");
    mqtt.publish(myBaseTopicTmp, jsonTemp);
-   Serial.println("published tmp on topic");
+   Serial.print("published tmp on topic");
+   Serial.println(jsonTemp);
+   Serial.println(myBaseTopicTmp);
    delay(5000);
 }
 /**

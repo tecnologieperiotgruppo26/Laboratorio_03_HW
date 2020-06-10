@@ -14,7 +14,7 @@
 #include <ArduinoJson.h>
 #include <Process.h>
 
-const int capacity = JSON_OBJECT_SIZE(2) + JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(4) + 40;
+const int capacity = JSON_OBJECT_SIZE(3) + 40;
 DynamicJsonDocument doc_snd(capacity);
 
 BridgeServer server; 
@@ -107,7 +107,7 @@ String senMlEncode(String res, float v, String unit){
   }
   doc_snd["e"][0]["t"] = millis()/1000;
   doc_snd["e"][0]["v"] = int(v);
-  
+   
   String output;
   serializeJson(doc_snd, output);
   Serial.println(output);
@@ -126,7 +126,7 @@ int postRequest(String data){
   p.addParameter("-X");
   p.addParameter("POST");
   p.addParameter("-d");
-  p.addParameter(data);
+  p.addParameter("param1=" + data);
   p.addParameter(url);
   p.run();
 
